@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from authapp.models import User
 
-User = get_user_model()
+# User = get_user_model()
 
 class Bimbel(models.Model):
     nama = models.CharField(max_length=255)

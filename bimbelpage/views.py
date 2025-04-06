@@ -8,7 +8,18 @@ from .permissions import IsAdminUser
 class BimbelViewSet(viewsets.ModelViewSet):
     queryset = Bimbel.objects.all()
     serializer_class = BimbelSerializer
-    permission_classes = [IsAdminUser]
+    # permission_classes = [IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def create(self, request, *args, **kwargs):
+        print("In create method")
+        print("User:", request.user)
+        print("Authenticated:", request.user.is_authenticated)
+        print("Has role attr:", hasattr(request.user, 'role'))
+        if hasattr(request.user, 'role'):
+            print("Role:", request.user.role)
+        
+        return super().create(request, *args, **kwargs)
 
     def get_queryset(self):
         """
