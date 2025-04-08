@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bimbel/', include('bimbelpage.urls')),
+    path('auth/', include('bimbelpage.auth_proxy_urls')),
 ]
