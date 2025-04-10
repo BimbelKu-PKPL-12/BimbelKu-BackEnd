@@ -5,7 +5,6 @@ from rest_framework.decorators import action
 from .models import Bimbel
 from .serializers import BimbelSerializer
 from .permissions import IsAdminUser, IsSiswaUser, IsOwnerOrReadOnly
-from .auth_client import AuthServiceClient
 
 class BimbelViewSet(viewsets.ModelViewSet):
     queryset = Bimbel.objects.all()
