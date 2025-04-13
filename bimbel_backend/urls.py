@@ -20,6 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('bimbelpage.urls')),  
-    path('api/admin/bimbels/', include('approve_bimbel.urls')),
+    path('api/superadmin/bimbel_approval/', include('approve_bimbel.urls')),
+    path('api/superadmin/', include('superadmin_manage_bimbel.urls')),
     path('api/auth/', include('bimbelpage.auth_proxy_urls')),  
 ]
