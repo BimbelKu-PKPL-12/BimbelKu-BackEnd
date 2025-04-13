@@ -10,7 +10,7 @@ class BimbelSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'nama', 'lokasi', 'kuota_awal', 'sisa_kuota',
             'deskripsi', 'harga', 'is_approved', 'created_at',
-            'admin', 'admin_username', 'status'
+            'admin', 'admin_username', 'status', 'rejection_reason'
         ]
         read_only_fields = ['admin', 'created_at', 'is_approved']
     
